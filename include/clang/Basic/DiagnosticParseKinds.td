@@ -683,6 +683,13 @@ def warn_cxx98_compat_lambda : Warning<
 def err_lambda_missing_parens : Error<
   "lambda requires '()' before %select{'mutable'|return type}0">;
 
+// C2 generic
+def err_expected_package : Error<"expected 'package' keyword">;
+def err_using_not_use : Error<"keyword 'using' not allowed. Did you mean 'use'?">;
+def err_expected_type_spec : Error<"expected type specifier">;
+def err_invalid_label : Error<"labels cannot have a package specifier">;
+
+
 // Availability attribute
 def err_expected_version : Error<
   "expected a version of the form 'major[.minor[.subminor]]'">;
