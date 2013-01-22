@@ -20,6 +20,8 @@
 
 #include "clang/Basic/Version.inc"
 
+#define CLANG_C2_VERSION 3
+
 /// \brief Helper macro for CLANG_VERSION_STRING.
 #define CLANG_MAKE_VERSION_STRING2(X) #X
 
