@@ -688,7 +688,7 @@ def err_expected_package : Error<"expected 'package' keyword">;
 def err_using_not_use : Error<"keyword 'using' not allowed. Did you mean 'use'?">;
 def err_expected_type_spec : Error<"expected type specifier">;
 def err_invalid_label : Error<"labels cannot have a package specifier">;
-
+def err_not_a_typename : Error<"%0 is not a type name">;
 
 // Availability attribute
 def err_expected_version : Error<
