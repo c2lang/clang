@@ -689,6 +689,9 @@ def err_using_not_use : Error<"keyword 'using' not allowed. Did you mean 'use'?"
 def err_expected_type_spec : Error<"expected type specifier">;
 def err_invalid_label : Error<"labels cannot have a package specifier">;
 def err_not_a_typename : Error<"%0 is not a type name">;
+def err_not_public : Error<"%0 is not public">;
+def err_unknown_package : Error<"unknown package: %0">;
+def err_package_not_used: Error<"package %0 is not used">;
 
 // Availability attribute
 def err_expected_version : Error<
