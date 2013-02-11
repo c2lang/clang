@@ -693,6 +693,7 @@ def err_not_public : Error<"%0 is not public">;
 def err_unknown_package : Error<"unknown package: %0">;
 def err_package_not_used: Error<"package %0 is not used">;
 def err_package_c2: Error<"package-name c2 is reserved">;
+def err_alias_is_package: Error<"cannot use existing package %0 as alias">;
 def err_expected_name_or_local: Error<"expected name or local after as">;
 
 
