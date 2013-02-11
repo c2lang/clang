@@ -268,6 +268,7 @@ KEYWORD(__objc_no                   , KEYALL)
 // C2 Keywords.
 KEYWORD(package                     , KEYC2)
 KEYWORD(use                         , KEYC2)
+KEYWORD(as                          , KEYC2)
 KEYWORD(type                        , KEYC2)
 KEYWORD(func                        , KEYC2)
 KEYWORD(local                       , KEYC2)
