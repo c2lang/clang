@@ -688,14 +688,15 @@ def err_expected_package : Error<"expected 'package' keyword">;
 def err_using_not_use : Error<"keyword 'using' not allowed. Did you mean 'use'?">;
 def err_expected_type_spec : Error<"expected type specifier">;
 def err_invalid_label : Error<"labels cannot have a package specifier">;
+def err_qualified_typedef : Error<"type definitions cannot have a package specifier">;
 def err_not_a_typename : Error<"%0 is not a type name">;
 def err_not_public : Error<"%0 is not public">;
 def err_unknown_package : Error<"unknown package: %0">;
 def err_package_not_used: Error<"package %0 is not used">;
 def err_package_c2: Error<"package-name c2 is reserved">;
 def err_alias_is_package: Error<"cannot use existing package %0 as alias">;
-def err_expected_name_or_local: Error<"expected name or local after as">;
-
+def err_alias_same_as_package: Error<"alias name is same as package name">;
+def err_ambiguous_symbol: Error<"symbol %0 is ambiguous">;
 
 // Availability attribute
 def err_expected_version : Error<
