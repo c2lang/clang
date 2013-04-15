@@ -281,6 +281,8 @@ KEYWORD(u32                         , KEYC2)
 KEYWORD(s8                          , KEYC2)
 KEYWORD(s16                         , KEYC2)
 KEYWORD(s32                         , KEYC2)
+KEYWORD(f32                         , KEYC2)
+KEYWORD(f64                         , KEYC2)
 KEYWORD(string                      , KEYC2)
 KEYWORD(NULL                        , KEYC2)
 
