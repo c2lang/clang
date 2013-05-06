@@ -699,6 +699,8 @@ def err_package_c2: Error<"package-name c2 is reserved">;
 def err_alias_is_package: Error<"cannot use existing package %0 as alias">;
 def err_alias_same_as_package: Error<"alias name is same as package name">;
 def err_ambiguous_symbol: Error<"symbol %0 is ambiguous">;
+def err_invalid_token_after_declaration_suggest_func : Error<
+  "invalid '%0' at end of declaration; did you forget the 'func' keyword?">;
 
 // Availability attribute
 def err_expected_version : Error<
