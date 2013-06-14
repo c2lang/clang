@@ -701,6 +701,8 @@ def err_alias_same_as_package: Error<"alias name is same as package name">;
 def err_ambiguous_symbol: Error<"symbol %0 is ambiguous">;
 def err_invalid_token_after_declaration_suggest_func : Error<
   "invalid '%0' at end of declaration; did you forget the 'func' keyword?">;
+def err_invalid_type_initializer_list : Error<
+  "cannot initialize variable of type %0 with initializer list">;
 
 // Availability attribute
 def err_expected_version : Error<
