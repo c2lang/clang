@@ -704,6 +704,14 @@ def err_invalid_token_after_declaration_suggest_func : Error<
   "invalid '%0' at end of declaration; did you forget the 'func' keyword?">;
 def err_invalid_type_initializer_list : Error<
   "cannot initialize variable of type %0 with initializer list">;
+def err_invalid_local_globalvar : Error<
+  "cannot use keyword local for global variables">;
+def err_invalid_local_returntype : Error<
+  "cannot use keyword local for function return types">;
+def err_invalid_local_functionargument : Error<
+ "cannot use keyword local for function parameters">;
+def err_invalid_local_typedef : Error<
+ "cannot use keyword local for type definitions">;
 
 // Availability attribute
 def err_expected_version : Error<
