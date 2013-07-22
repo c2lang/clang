@@ -712,6 +712,8 @@ def err_invalid_local_functionargument : Error<
  "cannot use keyword local for function parameters">;
 def err_invalid_local_typedef : Error<
  "cannot use keyword local for type definitions">;
+def err_uninitialized_const_var : Error<
+ "constant variable %0 must be initialized">;
 
 // Availability attribute
 def err_expected_version : Error<
