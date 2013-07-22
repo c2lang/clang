@@ -287,6 +287,7 @@ KEYWORD(f32                         , KEYC2)
 KEYWORD(f64                         , KEYC2)
 KEYWORD(string                      , KEYC2)
 KEYWORD(nil                         , KEYC2)
+KEYWORD(elemsof                     , KEYC2)
 
 // C++ 2.11p1: Keywords.
 KEYWORD(asm                         , KEYCXX|KEYGNU)
