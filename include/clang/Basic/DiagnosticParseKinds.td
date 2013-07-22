@@ -714,6 +714,8 @@ def err_invalid_local_typedef : Error<
  "cannot use keyword local for type definitions">;
 def err_uninitialized_const_var : Error<
  "constant variable %0 must be initialized">;
+def err_invalid_elemsof_type : Error<
+ "elemsof can only be used with array/enum type (not %0)">;
 
 // Availability attribute
 def err_expected_version : Error<
