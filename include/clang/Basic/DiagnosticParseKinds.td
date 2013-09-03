@@ -718,6 +718,8 @@ def err_invalid_elemsof_type : Error<
  "elemsof can only be used with array/enum type (not %0)">;
 def err_illegal_type_conversion : Error<
  "invalid type conversion from %0 to %1">;
+def err_var_self_init : Error<
+ "cannot initialize %0 with itself">;
 
 // Availability attribute
 def err_expected_version : Error<
