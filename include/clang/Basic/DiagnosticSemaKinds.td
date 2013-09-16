@@ -233,6 +233,22 @@ def warn_decl_shadow :
           "field of %2}1">,
   InGroup<Shadow>, DefaultIgnore;
 
+// C2 use declarations
+def err_use_own_package : Error<
+    "cannot use own package '%0'">;
+def err_duplicate_use : Error<
+    "duplicate use of package '%0'">;
+def err_package_has_alias : Error<
+    "package '%0' has been aliased to '%1'">;
+def err_typecheck_subscript : Error<
+  "subscripted value is not an array or pointer">;
+def err_main_non_public : Error<
+  "function 'main' should be declared public">;
+def err_main_missing : Error<
+  "no 'main' function defined">;
+def err_circular_typedef : Error<
+ "circular type definition: %0">;
+
 // C++ using declarations
 def err_using_requires_qualname : Error<
   "using declaration requires a qualified name">;
