@@ -248,6 +248,10 @@ def err_main_missing : Error<
   "no 'main' function defined">;
 def err_circular_typedef : Error<
  "circular type definition: %0">;
+def warn_unused_type : Warning<"unused type %0">,
+  InGroup<UnusedType>, DefaultIgnore;
+def warn_unused_struct_member : Warning<"unused struct member %0">,
+  InGroup<UnusedVariable>, DefaultIgnore;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<

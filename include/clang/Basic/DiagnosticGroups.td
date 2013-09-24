@@ -315,6 +315,7 @@ def UnusedParameter : DiagGroup<"unused-parameter">;
 def UnusedResult : DiagGroup<"unused-result">;
 def UnusedValue : DiagGroup<"unused-value", [UnusedComparison, UnusedResult]>;
 def UnusedVariable : DiagGroup<"unused-variable">;
+def UnusedType : DiagGroup<"unused-type">;
 def UsedButMarkedUnused : DiagGroup<"used-but-marked-unused">;
 def UserDefinedLiterals : DiagGroup<"user-defined-literals">;
 def ReadOnlySetterAttrs : DiagGroup<"readonly-setter-attrs">;
@@ -396,7 +397,7 @@ def Unused : DiagGroup<"unused",
                         // UnusedParameter, (matches GCC's behavior)
                         // UnusedMemberFunction, (clean-up llvm before enabling)
                         UnusedPrivateField,
-                        UnusedValue, UnusedVariable]>,
+                        UnusedValue, UnusedVariable, UnusedType]>,
                         DiagCategory<"Unused Entity Issue">;
 
 // Format settings.
