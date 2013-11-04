@@ -248,6 +248,8 @@ def err_main_missing : Error<
   "no 'main' function defined">;
 def err_circular_typedef : Error<
  "circular type definition: %0">;
+def warn_unused_package : Warning<"unused package %0">,
+  InGroup<UnusedPackage>, DefaultIgnore;
 def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
 def warn_unused_struct_member : Warning<"unused struct member %0">,
