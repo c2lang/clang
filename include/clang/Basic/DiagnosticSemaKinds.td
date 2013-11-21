@@ -254,6 +254,8 @@ def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
 def warn_unused_struct_member : Warning<"unused struct member %0">,
   InGroup<UnusedVariable>, DefaultIgnore;
+def err_type_in_initializer : Error<
+  "cannot use type in initializer">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
