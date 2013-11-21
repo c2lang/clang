@@ -766,7 +766,8 @@ def err_illegal_type_conversion : Error<
  "invalid type conversion from %0 to %1">;
 def err_var_self_init : Error<
  "cannot initialize %0 with itself">;
-
+def err_var_init_package : Error<
+ "cannot initialize variable with package name">;
 
 // Availability attribute
 def err_expected_version : Error<
