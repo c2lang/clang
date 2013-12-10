@@ -259,7 +259,7 @@ def warn_unused_public : Warning<"%select{type|function|variable}0 '%1' is not u
 def err_type_in_initializer : Error<
   "cannot use type in initializer">;
 def err_literal_outofbounds : Error<
-  "constant value out-of-bounds for type %0, range [%1, %2]">;
+  "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
