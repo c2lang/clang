@@ -256,8 +256,6 @@ def warn_unused_struct_member : Warning<"unused struct member %0">,
   InGroup<UnusedVariable>, DefaultIgnore;
 def warn_unused_public : Warning<"%select{type|function|variable}0 '%1' is not used public">,
   InGroup<UnusedPublic>, DefaultIgnore;
-def err_type_in_initializer : Error<
-  "cannot use type in initializer">;
 def err_literal_outofbounds : Error<
   "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
 
