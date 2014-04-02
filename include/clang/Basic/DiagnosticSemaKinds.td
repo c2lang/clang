@@ -258,6 +258,8 @@ def warn_unused_public : Warning<"%select{type|function|variable}0 '%1' is not u
   InGroup<UnusedPublic>, DefaultIgnore;
 def err_literal_outofbounds : Error<
   "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
+def err_duplicate_enum_value : Error<
+    "duplicate enum value">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
