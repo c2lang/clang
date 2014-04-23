@@ -260,6 +260,8 @@ def err_literal_outofbounds : Error<
   "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
 def err_duplicate_enum_value : Error<
     "duplicate enum value">;
+def err_vla_with_init_value : Error<
+    "variable length array may not be initialized">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
