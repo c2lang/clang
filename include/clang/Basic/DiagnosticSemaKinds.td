@@ -237,6 +237,36 @@ def warn_decl_shadow :
           "field of %2}1">,
   InGroup<Shadow>, DefaultIgnore;
 
+// C2 use declarations
+def err_use_own_package : Error<
+    "cannot use own package '%0'">;
+def err_duplicate_use : Error<
+    "duplicate use of package '%0'">;
+def err_package_has_alias : Error<
+    "package '%0' has been aliased to '%1'">;
+def err_typecheck_subscript : Error<
+  "subscripted value is not an array or pointer">;
+def err_main_non_public : Error<
+  "function 'main' should be declared public">;
+def err_main_missing : Error<
+  "no 'main' function defined">;
+def err_circular_typedef : Error<
+ "circular type definition: %0">;
+def warn_unused_package : Warning<"unused package %0">,
+  InGroup<UnusedPackage>, DefaultIgnore;
+def warn_unused_type : Warning<"unused type %0">,
+  InGroup<UnusedType>, DefaultIgnore;
+def warn_unused_struct_member : Warning<"unused struct member %0">,
+  InGroup<UnusedVariable>, DefaultIgnore;
+def warn_unused_public : Warning<"%select{type|function|variable}0 '%1' is not used public">,
+  InGroup<UnusedPublic>, DefaultIgnore;
+def err_literal_outofbounds : Error<
+  "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
+def err_duplicate_enum_value : Error<
+    "duplicate enum value">;
+def err_vla_with_init_value : Error<
+    "variable length array may not be initialized">;
+
 // C++ using declarations
 def err_using_requires_qualname : Error<
   "using declaration requires a qualified name">;
