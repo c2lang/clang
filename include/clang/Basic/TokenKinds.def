@@ -269,7 +269,7 @@ KEYWORD(__objc_no                   , KEYALL)
 
 // C2 Keywords.
 KEYWORD(package                     , KEYC2)
-KEYWORD(use                         , KEYC2)
+KEYWORD(import                      , KEYC2)
 KEYWORD(as                          , KEYC2)
 KEYWORD(type                        , KEYC2)
 KEYWORD(func                        , KEYC2)
@@ -319,7 +319,7 @@ KEYWORD(true                        , BOOLSUPPORT)
 KEYWORD(try                         , KEYCXX)
 KEYWORD(typename                    , KEYCXX)
 KEYWORD(typeid                      , KEYCXX)
-KEYWORD(using                       , KEYCXX|KEYC2)
+KEYWORD(using                       , KEYCXX)
 KEYWORD(virtual                     , KEYCXX)
 KEYWORD(wchar_t                     , WCHARSUPPORT)
 

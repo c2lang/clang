@@ -748,7 +748,6 @@ def err_lambda_missing_parens : Error<
 
 // C2 generic
 def err_expected_package : Error<"expected 'package' keyword">;
-def err_using_not_use : Error<"keyword 'using' not allowed. Did you mean 'use'?">;
 def err_expected_type_spec : Error<"expected type specifier">;
 def err_invalid_label : Error<"labels cannot have a package specifier">;
 def err_qualified_typedef : Error<"type definitions cannot have a package specifier">;
@@ -760,7 +759,7 @@ def err_package_not_used: Error<"package %0 is not used">;
 def err_unknown_package_symbol: Error<"package %0 has no symbol %1">;
 def err_package_c2: Error<"package-name c2 is reserved">;
 def err_invalid_symbol_name: Error<"invalid symbol name %0">;
-def err_alias_is_package: Error<"cannot use existing package %0 as alias">;
+def err_alias_is_package: Error<"cannot import existing package %0 as alias">;
 def err_alias_same_as_package: Error<"alias name is same as package name">;
 def err_ambiguous_symbol: Error<"symbol %0 is ambiguous">;
 def err_invalid_token_after_declaration_suggest_func : Error<

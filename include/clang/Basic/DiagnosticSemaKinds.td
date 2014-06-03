@@ -237,11 +237,12 @@ def warn_decl_shadow :
           "field of %2}1">,
   InGroup<Shadow>, DefaultIgnore;
 
-// C2 use declarations
-def err_use_own_package : Error<
-    "cannot use own package '%0'">;
-def err_duplicate_use : Error<
-    "duplicate use of package '%0'">;
+// C2 import declarations
+def err_import_own_package : Error<
+    "cannot import own package '%0'">;
+def err_duplicate_import : Error<
+    "duplicate import of package '%0'">;
+def note_previous_import : Note<"previous import is here">;
 def err_package_has_alias : Error<
     "package '%0' has been aliased to '%1'">;
 def err_typecheck_subscript : Error<
