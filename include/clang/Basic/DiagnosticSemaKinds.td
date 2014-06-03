@@ -238,13 +238,13 @@ def warn_decl_shadow :
   InGroup<Shadow>, DefaultIgnore;
 
 // C2 import declarations
-def err_import_own_package : Error<
-    "cannot import own package '%0'">;
+def err_import_own_module : Error<
+    "cannot import own module '%0'">;
 def err_duplicate_import : Error<
-    "duplicate import of package '%0'">;
+    "duplicate import of module '%0'">;
 def note_previous_import : Note<"previous import is here">;
-def err_package_has_alias : Error<
-    "package '%0' has been aliased to '%1'">;
+def err_module_has_alias : Error<
+    "module '%0' has been aliased to '%1'">;
 def err_typecheck_subscript : Error<
   "subscripted value is not an array or pointer">;
 def err_main_non_public : Error<
@@ -253,7 +253,7 @@ def err_main_missing : Error<
   "no 'main' function defined">;
 def err_circular_typedef : Error<
  "circular type definition: %0">;
-def warn_unused_package : Warning<"unused package %0">,
+def warn_unused_module : Warning<"unused module %0">,
   InGroup<UnusedPackage>, DefaultIgnore;
 def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
