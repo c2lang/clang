@@ -267,6 +267,12 @@ def err_duplicate_enum_value : Error<
     "duplicate enum value">;
 def err_vla_with_init_value : Error<
     "variable length array may not be initialized">;
+def err_duplicate_array_index_init : Error<
+    "duplicate initialization of array index">;
+def err_duplicate_field_init : Error<
+    "duplicate initialization of field %0">;
+def err_mixed_field_designator : Error<
+    "mixing field declarators with non-field declarators">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
