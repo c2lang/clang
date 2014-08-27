@@ -273,6 +273,16 @@ def err_duplicate_field_init : Error<
     "duplicate initialization of field %0">;
 def err_mixed_field_designator : Error<
     "mixing field declarators with non-field declarators">;
+def err_bitoffset_not_unsigned : Error<
+    "bit offsets are only allowed on unsigned integer type">;
+def err_bitoffset_index_non_int : Error<
+    "index of bitoffset has non-integer type %0">;
+def err_bitoffset_index_negative : Error<
+    "bitoffset index value '%0' is negative">;
+def err_bitoffset_index_too_large : Error<
+    "bitoffset index value '%0' too large for type %1">;
+def err_bitoffset_invalid_order : Error<
+    "left bitoffset index is smaller than right index">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
