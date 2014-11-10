@@ -108,6 +108,7 @@ namespace {
     KEYNOMS = 0x01000,
     WCHARSUPPORT = 0x02000,
     HALFSUPPORT = 0x04000,
+    KEYC2 = 0x08000,
     KEYALL = (0xffff & ~KEYNOMS) // Because KEYNOMS is used to exclude.
   };
 }
@@ -128,6 +129,7 @@ static void AddKeyword(StringRef Keyword,
   else if (LangOpts.CPlusPlus && (Flags & KEYCXX)) AddResult = 2;
   else if (LangOpts.CPlusPlus11 && (Flags & KEYCXX11)) AddResult = 2;
   else if (LangOpts.C99 && (Flags & KEYC99)) AddResult = 2;
+  else if (LangOpts.C2 && (Flags & KEYC2)) AddResult = 2;
   else if (LangOpts.GNUKeywords && (Flags & KEYGNU)) AddResult = 1;
   else if (LangOpts.MicrosoftExt && (Flags & KEYMS)) AddResult = 1;
   else if (LangOpts.Borland && (Flags & KEYBORLAND)) AddResult = 1;
