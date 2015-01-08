@@ -303,6 +303,7 @@ KEYWORD(float64                     , KEYC2)
 KEYWORD(string                      , KEYC2)
 KEYWORD(nil                         , KEYC2)
 KEYWORD(elemsof                     , KEYC2)
+KEYWORD(cast                        , KEYC2)
 
 // C++ 2.11p1: Keywords.
 KEYWORD(asm                         , KEYCXX|KEYGNU)
