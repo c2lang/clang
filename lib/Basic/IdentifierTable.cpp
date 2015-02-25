@@ -109,7 +109,7 @@ namespace {
     WCHARSUPPORT = 0x02000,
     HALFSUPPORT = 0x04000,
     KEYC2 = 0x08000,
-    KEYALL = (0xffff & ~KEYNOMS) // Because KEYNOMS is used to exclude.
+    KEYALL = (0x7fff & ~(KEYNOMS|KEYC2)) // Because KEYNOMS is used to exclude.
   };
 }
 
