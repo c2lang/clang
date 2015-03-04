@@ -108,7 +108,8 @@ namespace {
     KEYNOMS = 0x01000,
     WCHARSUPPORT = 0x02000,
     HALFSUPPORT = 0x04000,
-    KEYALL = (0xffff & ~KEYNOMS) // Because KEYNOMS is used to exclude.
+    KEYC2 = 0x08000,
+    KEYALL = (0x7fff & ~(KEYNOMS|KEYC2)) // Because KEYNOMS is used to exclude.
   };
 
   /// \brief How a keyword is treated in the selected standard.
@@ -128,6 +129,7 @@ static KeywordStatus getKeywordStatus(const LangOptions &LangOpts,
   if (LangOpts.CPlusPlus && (Flags & KEYCXX)) return KS_Enabled;
   if (LangOpts.CPlusPlus11 && (Flags & KEYCXX11)) return KS_Enabled;
   if (LangOpts.C99 && (Flags & KEYC99)) return KS_Enabled;
+  if (LangOpts.C2 && (Flags & KEYC2)) return KS_Enabled;
   if (LangOpts.GNUKeywords && (Flags & KEYGNU)) return KS_Extension;
   if (LangOpts.MicrosoftExt && (Flags & KEYMS)) return KS_Extension;
   if (LangOpts.Borland && (Flags & KEYBORLAND)) return KS_Extension;

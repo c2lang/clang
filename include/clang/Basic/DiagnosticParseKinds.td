@@ -807,6 +807,46 @@ def warn_init_capture_direct_list_init : Warning<
   "a future version of Clang; insert an '=' to avoid a change in behavior">,
   InGroup<FutureCompat>;
 
+// C2 generic
+def err_expected_type_spec : Error<"expected type specifier">;
+def err_invalid_label : Error<"labels cannot have a module specifier">;
+def err_qualified_typedef : Error<"type definitions cannot have a module specifier">;
+def err_not_a_typename : Error<"%0 is not a type name">;
+def err_not_public : Error<"%0 is not public">;
+def err_non_public_type : Error<"public declaration using non-public type %0">;
+def err_unknown_module : Error<"unknown module: %0">;
+def err_module_not_used: Error<"module %0 is not used">;
+def err_unknown_module_symbol: Error<"module %0 has no symbol %1">;
+def err_module_c2: Error<"module-name c2 is reserved">;
+def err_invalid_symbol_name: Error<"invalid symbol name %0">;
+def err_alias_is_module: Error<"cannot import existing module %0 as alias">;
+def err_alias_same_as_module: Error<"alias name is same as module name">;
+def err_ambiguous_symbol: Error<"symbol %0 is ambiguous">;
+def err_invalid_token_after_declaration_suggest_func : Error<
+  "invalid '%0' at end of declaration; did you forget the 'func' keyword?">;
+def err_invalid_type_initializer_list : Error<
+  "cannot initialize variable of type %0 with initializer list">;
+def err_invalid_local_globalvar : Error<
+  "cannot use keyword local for global variables">;
+def err_invalid_local_returntype : Error<
+  "cannot use keyword local for function return types">;
+def err_invalid_local_functionargument : Error<
+ "cannot use keyword local for function parameters">;
+def err_invalid_local_typedef : Error<
+ "cannot use keyword local for type definitions">;
+def err_invalid_local_structmember : Error<
+ "cannot use keyword local for %select{struct|union}0 members">;
+def err_uninitialized_const_var : Error<
+ "constant variable %0 must be initialized">;
+def err_invalid_elemsof_type : Error<
+ "elemsof can only be used with array/enum type (not %0)">;
+def err_illegal_type_conversion : Error<
+ "invalid type conversion from %0 to %1">;
+def err_var_self_init : Error<
+ "cannot initialize %0 with itself">;
+def err_is_a_module : Error<
+ "%0 is a module name">;
+
 // Availability attribute
 def err_expected_version : Error<
   "expected a version of the form 'major[.minor[.subminor]]'">;

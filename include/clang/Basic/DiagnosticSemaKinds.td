@@ -273,6 +273,55 @@ def warn_decl_shadow :
           "field of %2}1">,
   InGroup<Shadow>, DefaultIgnore;
 
+// C2 import declarations
+def err_import_own_module : Error<
+    "cannot import own module '%0'">;
+def err_duplicate_import : Error<
+    "duplicate import of module '%0'">;
+def note_previous_import : Note<"previous import is here">;
+def err_module_has_alias : Error<
+    "module '%0' has been aliased to '%1'">;
+def err_typecheck_subscript : Error<
+  "subscripted value is not an array or pointer">;
+def err_main_non_public : Error<
+  "function 'main' should be declared public">;
+def err_main_missing : Error<
+  "no 'main' function defined">;
+def err_circular_typedef : Error<
+ "circular type definition: %0">;
+def warn_unused_module : Warning<"unused module %0">,
+  InGroup<UnusedPackage>, DefaultIgnore;
+def warn_unused_type : Warning<"unused type %0">,
+  InGroup<UnusedType>, DefaultIgnore;
+def warn_unused_struct_member : Warning<"unused struct member %0">,
+  InGroup<UnusedVariable>, DefaultIgnore;
+def warn_unused_public : Warning<"%select{type|function|variable}0 '%1' is not used public">,
+  InGroup<UnusedPublic>, DefaultIgnore;
+def err_literal_outofbounds : Error<
+  "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
+def err_duplicate_enum_value : Error<
+    "duplicate enum value">;
+def err_vla_with_init_value : Error<
+    "variable length array may not be initialized">;
+def err_duplicate_array_index_init : Error<
+    "duplicate initialization of array index">;
+def err_duplicate_field_init : Error<
+    "duplicate initialization of field %0">;
+def err_mixed_field_designator : Error<
+    "mixing field declarators with non-field declarators">;
+def err_bitoffset_not_unsigned : Error<
+    "bit offsets are only allowed on unsigned integer type">;
+def err_bitoffset_index_non_int : Error<
+    "index of bitoffset has non-integer type %0">;
+def err_bitoffset_index_negative : Error<
+    "bitoffset index value '%0' is negative">;
+def err_bitoffset_index_too_large : Error<
+    "bitoffset index value '%0' too large for type %1">;
+def err_bitoffset_invalid_order : Error<
+    "left bitoffset index is smaller than right index">;
+def err_bitoffset_lhs : Error<
+    "bitoffset cannot be used as left hand side expression">;
+
 // C++ using declarations
 def err_using_requires_qualname : Error<
   "using declaration requires a qualified name">;
