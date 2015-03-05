@@ -321,6 +321,8 @@ def err_bitoffset_invalid_order : Error<
     "left bitoffset index is smaller than right index">;
 def err_bitoffset_lhs : Error<
     "bitoffset cannot be used as left hand side expression">;
+def err_decl_after_label: Error<
+  "a label must be followed by a statement and a declaration is not a statement">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
