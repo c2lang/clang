@@ -287,6 +287,8 @@ def err_main_non_public : Error<
   "function 'main' should be declared public">;
 def err_main_missing : Error<
   "no 'main' function defined">;
+def err_lib_has_main : Error<
+  "library cannot have 'main' function">;
 def err_circular_typedef : Error<
  "circular type definition: %0">;
 def warn_unused_module : Warning<"unused module %0">,
