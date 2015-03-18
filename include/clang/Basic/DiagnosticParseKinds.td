@@ -848,6 +848,9 @@ def err_var_self_init : Error<
  "cannot initialize %0 with itself">;
 def err_is_a_module : Error<
  "%0 is a module name">;
+def err_attribute_unknown : Error<"unknown attribute '%0'">;
+def err_attribute_invalid_decl : Error<
+  "attribute '%0' cannot be applied to %select{type|function|variable}1 declarations">;
 
 // Availability attribute
 def err_expected_version : Error<
