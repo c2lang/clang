@@ -855,6 +855,10 @@ def err_attribute_packed_non_struct : Error<
   "attribute 'packed' can only be applied to struct/union types">;
 def err_attribute_argument_empty_string : Error<
   "attribute argument cannot be empty string">;
+def err_attribute_invalid_constants : Error<
+  "attribute '%0' cannot be applied to constants">;
+def err_attribute_export_non_public : Error<
+  "attribute 'export' can only be applied to public declarations">;
 
 // Availability attribute
 def err_expected_version : Error<
