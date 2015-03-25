@@ -853,6 +853,8 @@ def err_attribute_invalid_decl : Error<
   "attribute '%0' cannot be applied to %select{type|function|variable}1 declarations">;
 def err_attribute_packed_non_struct : Error<
   "attribute 'packed' can only be applied to struct/union types">;
+def err_attribute_argument_empty_string : Error<
+  "attribute argument cannot be empty string">;
 
 // Availability attribute
 def err_expected_version : Error<
@@ -864,7 +866,7 @@ def err_zero_version : Error<
   "version number must have non-zero major, minor, or sub-minor version">;
 def err_availability_expected_platform : Error<
   "expected a platform name, e.g., 'macosx'">;
-  
+
 // objc_bridge_related attribute
 def err_objcbridge_related_expected_related_class : Error<
   "expected a related ObjectiveC class name, e.g., 'NSColor'">;
