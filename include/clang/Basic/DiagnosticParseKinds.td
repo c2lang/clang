@@ -851,6 +851,8 @@ def err_is_a_module : Error<
 def err_attribute_unknown : Error<"unknown attribute '%0'">;
 def err_attribute_invalid_decl : Error<
   "attribute '%0' cannot be applied to %select{type|function|variable}1 declarations">;
+def err_attribute_packed_non_struct : Error<
+  "attribute 'packed' can only be applied to struct/union types">;
 
 // Availability attribute
 def err_expected_version : Error<
