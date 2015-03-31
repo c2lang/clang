@@ -859,6 +859,10 @@ def err_attribute_invalid_constants : Error<
   "attribute '%0' cannot be applied to constants">;
 def err_attribute_export_non_public : Error<
   "attribute 'export' can only be applied to public declarations">;
+def err_attribute_weak_non_public : Error<
+  "weak declaration must be public">;
+def err_attribute_weak_non_exported : Error<
+  "weak declaration must be an exported symbol">;
 
 // Availability attribute
 def err_expected_version : Error<
