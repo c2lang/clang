@@ -327,6 +327,8 @@ def err_decl_after_label: Error<
   "a label must be followed by a statement and a declaration is not a statement">;
 def err_member_access_arrow : Error<
   "member access must be though '.' operator">;
+def err_not_incremental_array : Error<
+    "'%0' is not an incremental array">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
