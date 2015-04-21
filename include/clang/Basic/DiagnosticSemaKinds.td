@@ -311,6 +311,8 @@ def err_duplicate_field_init : Error<
     "duplicate initialization of field %0">;
 def err_mixed_field_designator : Error<
     "mixing field declarators with non-field declarators">;
+def err_invalid_initlist_init: Error<
+    "cannot initialize variable of type %0 with initializer list">;
 def err_bitoffset_not_unsigned : Error<
     "bit offsets are only allowed on unsigned integer type">;
 def err_bitoffset_index_non_int : Error<
@@ -329,6 +331,8 @@ def err_member_access_arrow : Error<
   "member access must be though '.' operator">;
 def err_not_incremental_array : Error<
     "'%0' is not an incremental array">;
+def err_incremental_array_function_scope : Error<
+    "incremental arrays not allowed in function scope">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
