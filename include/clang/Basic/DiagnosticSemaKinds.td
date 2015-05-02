@@ -297,7 +297,7 @@ def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
 def warn_unused_struct_member : Warning<"unused struct member %0">,
   InGroup<UnusedVariable>, DefaultIgnore;
-def warn_unused_public : Warning<"%select{type|function|variable}0 '%1' is not used public">,
+def warn_unused_public : Warning<"%select{type|function|variable}0 %1 is not used public">,
   InGroup<UnusedPublic>, DefaultIgnore;
 def err_literal_outofbounds : Error<
   "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
@@ -333,6 +333,7 @@ def err_not_incremental_array : Error<
     "'%0' is not an incremental array">;
 def err_incremental_array_function_scope : Error<
     "incremental arrays not allowed in function scope">;
+def err_main_returns_nonint32 : Error<"'main' must return 'int32'">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<

@@ -812,7 +812,7 @@ def err_expected_type_spec : Error<"expected type specifier">;
 def err_invalid_label : Error<"labels cannot have a module specifier">;
 def err_qualified_typedef : Error<"type definitions cannot have a module specifier">;
 def err_not_a_typename : Error<"%0 is not a type name">;
-def err_not_public : Error<"%0 is not public">;
+def err_not_public : Error<"symbol %0 is not public">;
 def err_non_public_type : Error<"public declaration using non-public type %0">;
 def err_unknown_module : Error<"unknown module: %0">;
 def err_module_not_used: Error<"module %0 is not used">;
