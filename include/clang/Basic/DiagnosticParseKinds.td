@@ -863,6 +863,8 @@ def err_attribute_weak_non_public : Error<
   "weak declaration must be public">;
 def err_attribute_weak_non_exported : Error<
   "weak declaration must be an exported symbol">;
+def err_invalid_sizeof_expr : Error<
+  "sizeof argument must be a symbol or a type">;
 
 // Availability attribute
 def err_expected_version : Error<
