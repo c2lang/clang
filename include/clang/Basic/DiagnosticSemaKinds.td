@@ -281,6 +281,8 @@ def err_duplicate_import : Error<
 def note_previous_import : Note<"previous import is here">;
 def err_module_has_alias : Error<
     "module '%0' has been aliased to '%1'">;
+def err_import_after_decls : Error<
+    "no imports allowed after declarations">;
 def err_typecheck_subscript : Error<
   "subscripted value is not an array or pointer">;
 def err_main_non_public : Error<
