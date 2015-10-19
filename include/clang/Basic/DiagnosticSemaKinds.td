@@ -299,6 +299,8 @@ def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
 def warn_unused_struct_member : Warning<"unused struct member %0">,
   InGroup<UnusedVariable>, DefaultIgnore;
+def err_duplicate_struct_member : Error<
+    "duplicate %select{union|struct}0 member %1">;
 def warn_unused_public : Warning<"%select{type|function|variable}0 %1 is not used public">,
   InGroup<UnusedPublic>, DefaultIgnore;
 def err_literal_outofbounds : Error<
