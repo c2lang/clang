@@ -299,7 +299,7 @@ def warn_unused_module : Warning<"unused module %0">,
   InGroup<UnusedPackage>, DefaultIgnore;
 def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
-def warn_unused_struct_member : Warning<"unused struct member %0">,
+def warn_unused_struct_member : Warning<"unused %select{union|struct}0 member %1">,
   InGroup<UnusedVariable>, DefaultIgnore;
 def err_duplicate_struct_member : Error<
     "duplicate %select{union|struct}0 member %1">;
