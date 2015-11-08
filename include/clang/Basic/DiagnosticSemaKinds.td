@@ -285,6 +285,8 @@ def err_module_invalid_name: Error<
     "invalid module name '%0'">;
 def err_import_after_decls : Error<
     "no imports allowed after declarations">;
+def err_file_wrong_module : Error<
+    "wrong module name, expected '%0', got '%1'">;
 def err_typecheck_subscript : Error<
   "subscripted value is not an array or pointer">;
 def err_main_non_public : Error<
