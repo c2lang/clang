@@ -3546,8 +3546,8 @@ LexNextToken:
     break;
 
   case '@':
-    // Objective C support.
-    if (CurPtr[-1] == '@' && LangOpts.ObjC1)
+    // Objective C and C2 support.
+    if (CurPtr[-1] == '@' && (LangOpts.ObjC1 || LangOpts.C2))
       Kind = tok::at;
     else
       Kind = tok::unknown;
