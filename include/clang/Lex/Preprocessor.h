@@ -1784,11 +1784,13 @@ private:
   /// start getting tokens from it using the PTH cache.
   void EnterSourceFileWithPTH(PTHLexer *PL, const DirectoryLookup *Dir);
 
+public:
   /// \brief Set the FileID for the preprocessor predefines.
   void setPredefinesFileID(FileID FID) {
     assert(PredefinesFileID.isInvalid() && "PredefinesFileID already set!");
     PredefinesFileID = FID;
   }
+private:
 
   /// \brief Returns true if we are lexing from a file and not a
   /// pragma or a macro.
