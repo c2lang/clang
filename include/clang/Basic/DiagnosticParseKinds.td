@@ -870,8 +870,8 @@ def err_is_a_module : Error<
 def err_attribute_unknown : Error<"unknown attribute '%0'">;
 def err_attribute_invalid_decl : Error<
   "attribute '%0' cannot be applied to %select{type|function|variable}1 declarations">;
-def err_attribute_packed_non_struct : Error<
-  "attribute 'packed' can only be applied to struct/union types">;
+def err_attribute_non_struct : Error<
+  "attribute '%0' can only be applied to struct/union types">;
 def err_attribute_argument_empty_string : Error<
   "attribute argument cannot be empty string">;
 def err_attribute_invalid_constants : Error<
@@ -882,6 +882,8 @@ def err_attribute_weak_non_public : Error<
   "weak declaration must be public">;
 def err_attribute_weak_non_exported : Error<
   "weak declaration must be an exported symbol">;
+def err_attr_opaque_non_public : Error<
+  "opaque declaration must be public">;
 def err_invalid_sizeof_expr : Error<
   "sizeof argument must be a symbol or a type">;
 
