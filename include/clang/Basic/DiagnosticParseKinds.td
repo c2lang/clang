@@ -884,6 +884,12 @@ def err_attribute_weak_non_exported : Error<
   "weak declaration must be an exported symbol">;
 def err_attr_opaque_non_public : Error<
   "opaque declaration must be public">;
+def err_deref_opaque : Error<
+  "cannot dereference opaque %select{union|struct}0 %1">;
+def err_opaque_used_by_value : Error<
+  "opaque type %0 used by value">;
+def err_opaque_used_by_value_public_decl : Error<
+  "public declaration using opaque type %0 by value">;
 def err_invalid_sizeof_expr : Error<
   "sizeof argument must be a symbol or a type">;
 
