@@ -316,6 +316,8 @@ def err_main_missing : Error<
   "no 'main' function defined">;
 def err_lib_has_main : Error<
   "library cannot have 'main' function">;
+def err_public_in_interface : Error<
+  "interface declarations cannot have keyword public">;
 def err_circular_typedef : Error<
  "circular type definition: %0">;
 def warn_unused_module : Warning<"unused module %0">,
