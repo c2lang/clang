@@ -341,7 +341,7 @@ def err_duplicate_array_index_init : Error<
 def err_duplicate_field_init : Error<
     "duplicate initialization of field %0">;
 def err_mixed_field_designator : Error<
-    "mixing field declarators with non-field declarators">;
+    "mixing field designator with non-field designators">;
 def err_invalid_initlist_init: Error<
     "cannot initialize variable of type %0 with initializer list">;
 def err_bitoffset_not_unsigned : Error<
