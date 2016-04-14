@@ -29,7 +29,8 @@ enum LangFeatures {
   Digraphs = (1 << 8),
   GNUMode = (1 << 9),
   HexFloat = (1 << 10),
-  ImplicitInt = (1 << 11)
+  ImplicitInt = (1 << 11),
+  C2 = (1 << 12)
 };
 
 }

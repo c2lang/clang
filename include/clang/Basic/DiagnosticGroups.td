@@ -456,6 +456,9 @@ def UnusedLocalTypedef : DiagGroup<"unused-local-typedef">;
 def UnusedPropertyIvar :  DiagGroup<"unused-property-ivar">;
 def UnusedGetterReturnValue : DiagGroup<"unused-getter-return-value">;
 def UsedButMarkedUnused : DiagGroup<"used-but-marked-unused">;
+def UnusedType : DiagGroup<"unused-type">;
+def UnusedModule : DiagGroup<"unused-module">;
+def UnusedPublic : DiagGroup<"unused-public">;
 def UserDefinedLiterals : DiagGroup<"user-defined-literals">;
 def Reorder : DiagGroup<"reorder">;
 def UndeclaredSelector : DiagGroup<"undeclared-selector">;
@@ -577,7 +580,8 @@ def Unused : DiagGroup<"unused",
                         // UnusedParameter, (matches GCC's behavior)
                         // UnusedMemberFunction, (clean-up llvm before enabling)
                         UnusedPrivateField, UnusedLocalTypedef,
-                        UnusedValue, UnusedVariable, UnusedPropertyIvar]>,
+                        UnusedValue, UnusedVariable, UnusedPropertyIvar,
+                        UnusedType, UnusedModule, UnusedPublic]>,
                         DiagCategory<"Unused Entity Issue">;
 
 // Format settings.
