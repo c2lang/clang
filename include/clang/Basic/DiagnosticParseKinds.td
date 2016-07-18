@@ -783,6 +783,7 @@ def err_const_casing: Error<"a constant name must start with an upper case chara
 def err_func_casing: Error<"a function name must start with a lower case character">;
 def err_var_casing: Error<"a variable name must start with a lower case character">;
 def err_module_casing: Error<"a module name must start with a lower case character">;
+def err_enumconst_casing: Error<"an enum constant must start with an upper case character">;
 def err_invalid_symbol_name: Error<"invalid symbol name %0">;
 def err_alias_is_module: Error<"cannot import existing module %0 as alias">;
 def err_alias_same_as_module: Error<"alias name is same as module name">;
