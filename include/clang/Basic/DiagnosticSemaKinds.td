@@ -391,6 +391,8 @@ def warn_unused_struct_member : Warning<"unused %select{union|struct}0 member %1
   InGroup<UnusedVariable>, DefaultIgnore;
 def err_duplicate_struct_member : Error<
     "duplicate %select{union|struct}0 member %1">;
+def err_struct_function_conflict : Error<
+    "member %0 conflicts with struct-function %1">;
 def warn_unused_public : Warning<"%select{type|function|variable}0 %1 is not used public">,
   InGroup<UnusedPublic>, DefaultIgnore;
 def err_literal_outofbounds : Error<
@@ -431,6 +433,10 @@ def err_main_returns_nonint32 : Error<
     "'main' must return 'int32'">;
 def err_illegal_cast : Error<
   "cannot cast type %0 to type %1">;
+def err_no_member_struct_func : Error<"no member/struct-function named %0 in %1">;
+def err_no_struct_func : Error<"type %1 has no struct-function %0">;
+def err_struct_func_args : Error<"%0 is not a struct-function (first argument incorrect/missing)">;
+def err_non_static_struct_func_usage : Error<"non-static use of struct-function is only allowed as function call">;
 
 // C++ using declarations
 def err_using_requires_qualname : Error<
