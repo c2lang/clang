@@ -425,6 +425,8 @@ def err_decl_after_label: Error<
   "a label must be followed by a statement and a declaration is not a statement">;
 def err_member_access_arrow : Error<
   "member access must be though '.' operator">;
+def err_incremental_array_initlist : Error<
+    "incremental array cannot have initializer">;
 def err_not_incremental_array : Error<
     "'%0' is not an incremental array">;
 def err_incremental_array_function_scope : Error<
