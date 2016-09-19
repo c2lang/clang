@@ -431,6 +431,8 @@ def err_not_incremental_array : Error<
     "'%0' is not an incremental array">;
 def err_incremental_array_function_scope : Error<
     "incremental arrays not allowed in function scope">;
+def err_incremental_array_value_function_scope : Error<
+    "cannot add values to incremental array in function scope">;
 def err_main_returns_nonint32 : Error<
     "'main' must return 'int32'">;
 def err_illegal_cast : Error<
