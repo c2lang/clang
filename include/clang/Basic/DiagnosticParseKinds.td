@@ -796,6 +796,8 @@ def err_unknown_module : Error<"unknown module: %0">;
 def err_module_not_used: Error<"module %0 is not used">;
 def err_unknown_module_symbol: Error<"module %0 has no symbol %1">;
 def err_module_c2: Error<"module-name c2 is reserved">;
+def err_indirect_component : Error<
+  "target %0 has no dependency on library %1 (needed for module %2)">;
 def err_type_casing: Error<"a type name must start with an upper case character">;
 def err_const_casing: Error<"a constant name must start with an upper case character">;
 def err_func_casing: Error<"a function name must start with a lower case character">;
