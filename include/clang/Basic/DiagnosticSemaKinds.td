@@ -445,6 +445,10 @@ def err_main_returns_nonint32 : Error<
     "'main' must return 'int32'">;
 def err_illegal_cast : Error<
   "cannot cast type %0 to type %1">;
+def err_cast_pointer_to_nonword : Error<
+  "pointers may only be cast to integer type %0">;
+def err_cast_nonword_to_pointer : Error<
+  "only integers of type %0 may be cast to a pointer">;
 def err_no_member_struct_func : Error<"no member/struct-function named %0 in %1">;
 def err_no_struct_func : Error<"type %1 has no struct-function %0">;
 def err_struct_func_args : Error<"%0 is not a struct-function (first argument incorrect/missing)">;
