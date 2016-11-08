@@ -319,6 +319,8 @@ KEYWORD(float32                     , KEYC2)
 KEYWORD(float64                     , KEYC2)
 KEYWORD(nil                         , KEYC2)
 KEYWORD(elemsof                     , KEYC2)
+KEYWORD(enum_min                    , KEYC2)
+KEYWORD(enum_max                    , KEYC2)
 KEYWORD(cast                        , KEYC2)
 
 
