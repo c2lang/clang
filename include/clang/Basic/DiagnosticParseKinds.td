@@ -826,8 +826,6 @@ def err_invalid_local_condition_decl : Error<
  "variable declaration in condition cannot have keyword local">;
 def err_uninitialized_const_var : Error<
  "constant variable %0 must be initialized">;
-def err_invalid_elemsof_type : Error<
- "elemsof can only be used with array/enum type (not %0)">;
 def err_illegal_type_conversion : Error<
  "invalid type conversion from %0 to %1">;
 def err_var_self_init : Error<
