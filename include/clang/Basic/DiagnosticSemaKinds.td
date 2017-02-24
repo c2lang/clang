@@ -350,7 +350,7 @@ def err_inline_non_function : Error<
   "'inline' can only appear on functions%select{| and non-local variables}0">;
 def err_noreturn_non_function : Error<
   "'_Noreturn' can only appear on functions">;
-def warn_qual_return_type : Warning< 
+def warn_qual_return_type : Warning<
   "'%0' type qualifier%s1 on return type %plural{1:has|:have}1 no effect">,
   InGroup<IgnoredQualifiers>, DefaultIgnore;
 def warn_deprecated_redundant_constexpr_static_def : Warning<
@@ -375,6 +375,100 @@ def warn_modifying_shadowing_decl :
   Warning<"modifying constructor parameter %0 that shadows a "
           "field of %1">,
   InGroup<ShadowFieldInConstructorModified>, DefaultIgnore;
+
+// C2 import declarations
+def err_import_own_module : Error<
+    "cannot import own module '%0'">;
+def err_duplicate_import : Error<
+    "duplicate import of module '%0'">;
+def note_previous_import : Note<"previous import is here">;
+def err_module_has_alias : Error<
+    "module '%0' has been aliased to '%1'">;
+def err_module_invalid_name: Error<
+    "invalid module name '%0'">;
+def err_import_after_decls : Error<
+    "no imports allowed after declarations">;
+def err_file_wrong_module : Error<
+    "wrong module name, expected '%0', got '%1'">;
+def err_typecheck_subscript : Error<
+  "subscripted value is not an array or pointer">;
+def err_main_non_public : Error<
+  "function 'main' should be declared public">;
+def err_main_missing : Error<
+  "no 'main' function defined">;
+def err_lib_has_main : Error<
+  "library cannot have 'main' function">;
+def err_public_in_interface : Error<
+  "interface declarations cannot have keyword public">;
+def err_circular_typedef : Error<
+ "circular type definition: %0">;
+def warn_unused_module : Warning<"unused module %0">,
+  InGroup<UnusedModule>, DefaultIgnore;
+def warn_unused_type : Warning<"unused type %0">,
+  InGroup<UnusedType>, DefaultIgnore;
+def warn_unused_struct_member : Warning<"unused %select{union|struct}0 member %1">,
+  InGroup<UnusedVariable>, DefaultIgnore;
+def err_duplicate_struct_member : Error<
+    "duplicate %select{union|struct}0 member %1">;
+def err_struct_function_conflict : Error<
+    "member %0 conflicts with struct-function %1">;
+def warn_unused_public : Warning<"%select{type|function|variable}0 %1 is not used public">,
+  InGroup<UnusedPublic>, DefaultIgnore;
+def err_literal_outofbounds : Error<
+  "constant value %3 out-of-bounds for type %0, range [%1, %2]">;
+def err_duplicate_enum_value : Error<
+    "duplicate enum value">;
+def err_vla_with_init_value : Error<
+    "variable length array may not be initialized">;
+def err_duplicate_array_index_init : Error<
+    "duplicate initialization of array index">;
+def err_duplicate_field_init : Error<
+    "duplicate initialization of field %0">;
+def err_mixed_field_designator : Error<
+    "mixing field designator with non-field designators">;
+def err_invalid_initlist_init: Error<
+    "cannot initialize variable of type %0 with initializer list">;
+def err_bitoffset_not_unsigned : Error<
+    "bit offsets are only allowed on unsigned integer type">;
+def err_bitoffset_index_non_int : Error<
+    "index of bitoffset has non-integer type %0">;
+def err_bitoffset_index_negative : Error<
+    "bitoffset index value '%0' is negative">;
+def err_bitoffset_index_too_large : Error<
+    "bitoffset index value '%0' too large for type %1">;
+def err_bitoffset_invalid_order : Error<
+    "left bitoffset index is smaller than right index">;
+def err_bitoffset_lhs : Error<
+    "bitoffset cannot be used as left hand side expression">;
+def err_decl_after_label: Error<
+  "a label must be followed by a statement and a declaration is not a statement">;
+def err_member_access_arrow : Error<
+  "member access must be though '.' operator">;
+def err_incremental_array_initlist : Error<
+    "incremental array cannot have initializer">;
+def err_not_incremental_array : Error<
+    "'%0' is not an incremental array">;
+def err_incremental_array_function_scope : Error<
+    "incremental arrays not allowed in function scope">;
+def err_incremental_array_value_function_scope : Error<
+    "cannot add values to incremental array in function scope">;
+def err_main_returns_nonint32 : Error<
+    "'main' must return 'int32'">;
+def err_illegal_cast : Error<
+  "cannot cast type %0 to type %1">;
+def err_cast_pointer_to_nonword : Error<
+  "pointers may only be cast to integer type %0">;
+def err_cast_nonword_to_pointer : Error<
+  "only integers of type %0 may be cast to a pointer">;
+def err_no_member_struct_func : Error<"no member/struct-function named %0 in %1">;
+def err_no_struct_func : Error<"type %1 has no struct-function %0">;
+def err_struct_func_args : Error<"%0 is not a struct-function (first argument incorrect/missing)">;
+def err_non_static_struct_func_usage : Error<"non-static use of struct-function is only allowed as function call">;
+def err_enum_minmax_no_enum: Error<
+  "%select{enum_min|enum_max}0 can only be used on enum types">;
+def err_elemsof_no_array: Error<
+  "elemsof can only be used on arrays">;
+
 
 // C++ decomposition declarations
 def err_decomp_decl_context : Error<
@@ -6694,58 +6788,58 @@ def err_call_function_incomplete_return : Error<
 def err_call_incomplete_argument : Error<
   "argument type %0 is incomplete">;
 def err_typecheck_call_too_few_args : Error<
-  "too few %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too few %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected %1, have %2">;
 def err_typecheck_call_too_few_args_one : Error<
-  "too few %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too few %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "single argument %1 was not specified">;
 def err_typecheck_call_too_few_args_at_least : Error<
-  "too few %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too few %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected at least %1, have %2">;
 def err_typecheck_call_too_few_args_at_least_one : Error<
-  "too few %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too few %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "at least argument %1 must be specified">;
 def err_typecheck_call_too_few_args_suggest : Error<
-  "too few %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too few %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected %1, have %2; did you mean %3?">;
 def err_typecheck_call_too_few_args_at_least_suggest : Error<
-  "too few %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too few %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected at least %1, have %2; did you mean %3?">;
 def err_typecheck_call_too_many_args : Error<
-  "too many %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too many %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected %1, have %2">;
 def err_typecheck_call_too_many_args_one : Error<
-  "too many %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too many %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected single argument %1, have %2 arguments">;
 def err_typecheck_call_too_many_args_at_most : Error<
-  "too many %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too many %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected at most %1, have %2">;
 def err_typecheck_call_too_many_args_at_most_one : Error<
-  "too many %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too many %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected at most single argument %1, have %2 arguments">;
 def err_typecheck_call_too_many_args_suggest : Error<
-  "too many %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too many %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected %1, have %2; did you mean %3?">;
 def err_typecheck_call_too_many_args_at_most_suggest : Error<
-  "too many %select{|||execution configuration }0arguments to "
-  "%select{function|block|method|kernel function}0 call, "
+  "too many %select{|||execution configuration ||}0arguments to "
+  "%select{function|block|method|kernel function|struct-function|static struct-function}0 call, "
   "expected at most %1, have %2; did you mean %3?">;
-  
+
 def err_arc_typecheck_convert_incompatible_pointer : Error<
   "incompatible pointer types passing retainable parameter of type %0"
   "to a CF function expecting %1 type">;
-  
+
 def err_builtin_fn_use : Error<"builtin functions must be directly called">;
 
 def warn_call_wrong_number_of_arguments : Warning<

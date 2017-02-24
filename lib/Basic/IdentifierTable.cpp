@@ -114,7 +114,8 @@ namespace {
     KEYZVECTOR  = 0x40000,
     KEYCOROUTINES = 0x80000,
     KEYMODULES = 0x100000,
-    KEYALL = (0x1fffff & ~KEYNOMS18 &
+    KEYC2       = 0x100000,
+    KEYALL = (0xffffff & ~KEYNOMS18 & ~KEYC2 &
               ~KEYNOOPENCL) // KEYNOMS18 and KEYNOOPENCL are used to exclude.
   };
 
@@ -135,6 +136,7 @@ static KeywordStatus getKeywordStatus(const LangOptions &LangOpts,
   if (LangOpts.CPlusPlus && (Flags & KEYCXX)) return KS_Enabled;
   if (LangOpts.CPlusPlus11 && (Flags & KEYCXX11)) return KS_Enabled;
   if (LangOpts.C99 && (Flags & KEYC99)) return KS_Enabled;
+  if (LangOpts.C2 && (Flags & KEYC2)) return KS_Enabled;
   if (LangOpts.GNUKeywords && (Flags & KEYGNU)) return KS_Extension;
   if (LangOpts.MicrosoftExt && (Flags & KEYMS)) return KS_Extension;
   if (LangOpts.Borland && (Flags & KEYBORLAND)) return KS_Extension;
@@ -163,6 +165,10 @@ static void AddKeyword(StringRef Keyword,
                        tok::TokenKind TokenCode, unsigned Flags,
                        const LangOptions &LangOpts, IdentifierTable &Table) {
   KeywordStatus AddResult = getKeywordStatus(LangOpts, Flags);
+
+  if (LangOpts.C2) {
+    if ((Flags & (KEYC2|BOOLSUPPORT)) == 0) return;
+  }
 
   // Don't add this keyword under MSVCCompat.
   if (LangOpts.MSVCCompat && (Flags & KEYNOMS18) &&

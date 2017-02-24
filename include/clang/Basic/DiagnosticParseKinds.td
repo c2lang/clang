@@ -810,6 +810,79 @@ def err_lambda_decl_specifier_repeated : Error<
 def err_expected_star_this_capture : Error<
   "expected 'this' following '*' in lambda capture list">;
 
+// C2 generic
+def err_expected_type_spec : Error<"expected type specifier">;
+def err_invalid_label : Error<"labels cannot have a module specifier">;
+def err_qualified_typedef : Error<"type definitions cannot have a module specifier">;
+def err_not_a_typename : Error<"%0 is not a type name">;
+def err_not_public : Error<"symbol %0 is not public">;
+def err_non_public_type : Error<"public declaration using non-public type %0">;
+def err_unknown_module : Error<"unknown module: %0">;
+def err_module_not_used: Error<"module %0 is not used">;
+def err_unknown_module_symbol: Error<"module %0 has no symbol %1">;
+def err_module_c2: Error<"module-name c2 is reserved">;
+def err_indirect_component : Error<
+  "target %0 has no dependency on library %1 (needed for module %2)">;
+def err_type_casing: Error<"a type name must start with an upper case character">;
+def err_const_casing: Error<"a constant name must start with an upper case character">;
+def err_func_casing: Error<"a function name must start with a lower case character">;
+def err_var_casing: Error<"a variable name must start with a lower case character">;
+def err_module_casing: Error<"a module name must start with a lower case character">;
+def err_enumconst_casing: Error<"an enum constant must start with an upper case character">;
+def err_invalid_symbol_name: Error<"invalid symbol name %0">;
+def err_alias_is_module: Error<"cannot import existing module %0 as alias">;
+def err_alias_same_as_module: Error<"alias name is same as module name">;
+def err_ambiguous_symbol: Error<"symbol %0 is ambiguous">;
+def err_invalid_token_after_declaration_suggest_func : Error<
+  "invalid '%0' at end of declaration; did you forget the 'func' keyword?">;
+def err_invalid_type_initializer_list : Error<
+  "cannot initialize variable of type %0 with initializer list">;
+def err_invalid_local_globalvar : Error<
+  "cannot use keyword local for global variables">;
+def err_invalid_local_returntype : Error<
+  "cannot use keyword local for function return types">;
+def err_invalid_local_functionargument : Error<
+ "cannot use keyword local for function parameters">;
+def err_invalid_local_typedef : Error<
+ "cannot use keyword local for type definitions">;
+def err_invalid_local_structmember : Error<
+ "cannot use keyword local for %select{struct|union}0 members">;
+def err_invalid_local_condition_decl : Error<
+ "variable declaration in condition cannot have keyword local">;
+def err_uninitialized_const_var : Error<
+ "constant variable %0 must be initialized">;
+def err_illegal_type_conversion : Error<
+ "invalid type conversion from %0 to %1">;
+def err_var_self_init : Error<
+ "cannot initialize %0 with itself">;
+def err_is_a_module : Error<
+ "%0 is a module name">;
+def err_attribute_unknown : Error<"unknown attribute '%0'">;
+def err_attribute_invalid_decl : Error<
+  "attribute '%0' cannot be applied to %select{type|function|variable}1 declarations">;
+def err_attribute_non_struct : Error<
+  "attribute '%0' can only be applied to struct/union types">;
+def err_attribute_argument_empty_string : Error<
+  "attribute argument cannot be empty string">;
+def err_attribute_invalid_constants : Error<
+  "attribute '%0' cannot be applied to constants">;
+def err_attribute_export_non_public : Error<
+  "attribute 'export' can only be applied to public declarations">;
+def err_attribute_weak_non_public : Error<
+  "weak declaration must be public">;
+def err_attribute_weak_non_exported : Error<
+  "weak declaration must be an exported symbol">;
+def err_attr_opaque_non_public : Error<
+  "opaque declaration must be public">;
+def err_deref_opaque : Error<
+  "cannot dereference opaque %select{union|struct}0 %1">;
+def err_opaque_used_by_value : Error<
+  "opaque type %0 used by value">;
+def err_opaque_used_by_value_public_decl : Error<
+  "public declaration using opaque type %0 by value">;
+def err_invalid_sizeof_expr : Error<
+  "sizeof argument must be a symbol or a type">;
+
 // C++1z constexpr lambda expressions
 def warn_cxx14_compat_constexpr_on_lambda : Warning<
   "constexpr on lambda expressions is incompatible with C++ standards before C++1z">,
