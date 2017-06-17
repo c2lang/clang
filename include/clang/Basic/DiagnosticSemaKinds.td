@@ -462,7 +462,7 @@ def err_cast_nonword_to_pointer : Error<
   "only integers of type %0 may be cast to a pointer">;
 def err_no_member_struct_func : Error<"no member/struct-function named %0 in %1">;
 def err_no_struct_func : Error<"type %1 has no struct-function %0">;
-def err_struct_func_args : Error<"%0 is not a struct-function (first argument incorrect/missing)">;
+def err_static_struct_func_notype : Error<"static struct-functions must use type as left hand side">;
 def err_non_static_struct_func_usage : Error<"non-static use of struct-function is only allowed as function call">;
 def err_enum_minmax_no_enum: Error<
   "%select{enum_min|enum_max}0 can only be used on enum types">;
