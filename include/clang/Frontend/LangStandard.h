@@ -31,7 +31,8 @@ enum LangFeatures {
   GNUMode = (1 << 9),
   HexFloat = (1 << 10),
   ImplicitInt = (1 << 11),
-  OpenCL = (1 << 12)
+  OpenCL = (1 << 12),
+  C2 = (1 << 13)
 };
 
 }
