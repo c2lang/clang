@@ -434,6 +434,8 @@ def err_circular_typedef : Error<
  "circular type definition: %0">;
 def warn_unused_module : Warning<"unused module %0">,
   InGroup<UnusedModule>, DefaultIgnore;
+def warn_unused_import : Warning<"unused import %0">,
+  InGroup<UnusedImport>, DefaultIgnore;
 def warn_unused_type : Warning<"unused type %0">,
   InGroup<UnusedType>, DefaultIgnore;
 def warn_unused_struct_member : Warning<"unused %select{union|struct}0 member %1">,
