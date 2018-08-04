@@ -332,7 +332,7 @@ KEYWORD(enum_max                    , KEYC2)
 KEYWORD(cast                        , KEYC2)
 
 // C++ 2.11p1: Keywords.
-KEYWORD(asm                         , KEYCXX|KEYGNU)
+KEYWORD(asm                         , KEYCXX|KEYGNU|KEYC2)
 KEYWORD(bool                        , BOOLSUPPORT)
 KEYWORD(catch                       , KEYCXX)
 KEYWORD(class                       , KEYCXX)
