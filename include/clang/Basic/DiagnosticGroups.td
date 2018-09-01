@@ -595,6 +595,10 @@ def UnusedLocalTypedef : DiagGroup<"unused-local-typedef">;
 def UnusedPropertyIvar :  DiagGroup<"unused-property-ivar">;
 def UnusedGetterReturnValue : DiagGroup<"unused-getter-return-value">;
 def UsedButMarkedUnused : DiagGroup<"used-but-marked-unused">;
+def UnusedType : DiagGroup<"unused-type">;
+def UnusedModule : DiagGroup<"unused-module">;
+def UnusedImport : DiagGroup<"unused-import">;
+def UnusedPublic : DiagGroup<"unused-public">;
 def UserDefinedLiterals : DiagGroup<"user-defined-literals">;
 def UserDefinedWarnings : DiagGroup<"user-defined-warnings">;
 def Reorder : DiagGroup<"reorder">;
@@ -722,7 +726,8 @@ def Unused : DiagGroup<"unused",
                         // UnusedMemberFunction, (clean-up llvm before enabling)
                         UnusedPrivateField, UnusedLambdaCapture,
                         UnusedLocalTypedef, UnusedValue, UnusedVariable,
-                        UnusedPropertyIvar]>,
+                        UnusedPropertyIvar,
+                        UnusedType, UnusedModule, UnusedImport, UnusedPublic]>,
                         DiagCategory<"Unused Entity Issue">;
 
 // Format settings.

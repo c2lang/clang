@@ -2036,11 +2036,13 @@ private:
   /// start getting tokens from it using the PTH cache.
   void EnterSourceFileWithPTH(PTHLexer *PL, const DirectoryLookup *Dir);
 
+public:
   /// Set the FileID for the preprocessor predefines.
   void setPredefinesFileID(FileID FID) {
     assert(PredefinesFileID.isInvalid() && "PredefinesFileID already set!");
     PredefinesFileID = FID;
   }
+private:
 
   /// Set the FileID for the PCH through header.
   void setPCHThroughHeaderFileID(FileID FID);
